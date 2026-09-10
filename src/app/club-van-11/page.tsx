@@ -1,0 +1,72 @@
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "Club van 11 | JAV Luyksgestel De Prutsers",
+  description:
+    "Word lid van de Club van 11 van JAV Luyksgestel De Prutsers en steun onze vereniging met een symbolisch bedrag van €11,-.",
+};
+
+export default function ClubVan11Page() {
+  return (
+    <>
+      <section className="relative overflow-hidden bg-mesh-warm py-20 text-center text-white">
+        <div className="relative z-10 mx-auto max-w-3xl px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-prutsers-orange-light">
+            Steun de vereniging
+          </p>
+          <h1 className="font-display mt-4 text-4xl text-white sm:text-6xl">
+            Club van <span className="text-prutsers-orange">11</span>
+          </h1>
+        </div>
+      </section>
+
+      <section className="bg-prutsers-cream py-16">
+        <Reveal className="mx-auto max-w-3xl space-y-6 rounded-3xl bg-white p-8 shadow-sm sm:p-12 text-base leading-relaxed text-prutsers-dark/80">
+          <p>Leuk dat je geïnteresseerd bent in onze Club van 11.</p>
+          <p>
+            Wij hebben er bewust voor gekozen om dit keer niet het bedrijfsleven als doelgroep te nemen. Er zijn
+            namelijk heel veel andere mensen die JAV Luyksgestel De Prutsers een warm hart toe willen dragen en hun
+            steentje bij willen dragen aan onze vereniging. Door middel van een symbolisch bedrag van{" "}
+            <strong className="text-prutsers-orange-dark">€11,-</strong> willen wij hiermee een extraatje creëren om
+            onze activiteiten nog verder uit te breiden en mede om onze vaste lasten van onze eigen loods te
+            bekostigen.
+          </p>
+          <p>
+            Wilt u meer informatie over de Club van 11? Bekijk dan het informatieformulier hieronder. Of mail naar{" "}
+            <a href="mailto:clubvan11@javluyksgestel.nl" className="font-semibold text-prutsers-accent-dark underline decoration-prutsers-accent-dark/40 underline-offset-2">
+              clubvan11@javluyksgestel.nl
+            </a>
+            .
+          </p>
+          <p>
+            Wilt u lid worden van de Club van 11? Download dan het inschrijfformulier of meld u aan via de knop
+            hieronder.
+          </p>
+          <p className="font-semibold text-prutsers-dark">
+            Alvast hartelijk dank! En welkom bij de Club van 11 van JAV Luyksgestel De Prutsers.
+          </p>
+
+          <div className="flex flex-wrap gap-4 pt-4">
+            <a
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAa__YW8wz5UQjVCTk5IUkVHV0syNEE4WjFMSzkxV1NYWi4u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shadow-brand-sm rounded-xl bg-prutsers-orange px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-prutsers-orange-dark hover:shadow-brand"
+            >
+              Online inschrijfformulier
+            </a>
+            <a
+              href="https://javluyksgestel.nl/wp-content/uploads/2020/10/Informatieformulier-club-van-11-V2-3.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-prutsers-dark/15 bg-white px-6 py-3 text-sm font-semibold text-prutsers-dark transition hover:-translate-y-0.5 hover:border-prutsers-accent-dark/40 hover:text-prutsers-accent-dark hover:shadow-brand-sm"
+            >
+              Informatieformulier downloaden
+            </a>
+          </div>
+        </Reveal>
+      </section>
+    </>
+  );
+}

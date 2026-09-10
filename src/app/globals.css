@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfaf7;
+  --foreground: #1c1712;
+
+  --color-prutsers-orange: #fe6627;
+  --color-prutsers-orange-dark: #d94a10;
+  --color-prutsers-orange-light: #ff9a66;
+  --color-prutsers-orange-tint: #fff1e8;
+  --color-prutsers-accent: #02ff02;
+  --color-prutsers-accent-dark: #178a3a;
+  --color-prutsers-green-deep: #1d4a38;
+  --color-prutsers-green-deepest: #0f2e22;
+  --color-prutsers-cream: #fdfaf7;
+  --color-prutsers-dark: #17120e;
+  --color-prutsers-dark-2: #241b14;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-prutsers-orange: var(--color-prutsers-orange);
+  --color-prutsers-orange-dark: var(--color-prutsers-orange-dark);
+  --color-prutsers-orange-light: var(--color-prutsers-orange-light);
+  --color-prutsers-orange-tint: var(--color-prutsers-orange-tint);
+  --color-prutsers-accent: var(--color-prutsers-accent);
+  --color-prutsers-accent-dark: var(--color-prutsers-accent-dark);
+  --color-prutsers-green-deep: var(--color-prutsers-green-deep);
+  --color-prutsers-green-deepest: var(--color-prutsers-green-deepest);
+  --color-prutsers-cream: var(--color-prutsers-cream);
+  --color-prutsers-dark: var(--color-prutsers-dark);
+  --color-prutsers-dark-2: var(--color-prutsers-dark-2);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+/* Shared display treatment: same Inter family as the rest of the site,
+   just heavier weight and tighter tracking for a clean, modern wordmark look. */
+.font-display {
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.font-black-tight {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+/* Refined elevation instead of a neon halo */
+.shadow-brand {
+  box-shadow: 0 1px 2px rgba(23, 18, 14, 0.06), 0 16px 32px -12px rgba(254, 102, 39, 0.35);
+}
+
+.shadow-brand-sm {
+  box-shadow: 0 1px 2px rgba(23, 18, 14, 0.05), 0 8px 20px -10px rgba(254, 102, 39, 0.3);
+}
+
+/* Subtle surfaces (no backdrop-filter, to avoid blank-render glitches on some GPUs) */
+.glass-light {
+  background: #ffffff;
+  border: 1px solid rgba(23, 18, 14, 0.06);
+}
+
+/* Deep green backdrop, with orange reserved for accents on top of it */
+.bg-mesh-warm {
+  background: linear-gradient(160deg, var(--color-prutsers-green-deep) 0%, var(--color-prutsers-green-deepest) 100%);
+}
+
+.bg-mesh-light {
+  background-color: var(--color-prutsers-cream);
+  background-image: radial-gradient(120% 100% at 100% 0%, rgba(254, 102, 39, 0.06) 0%, transparent 55%);
+}
+
+/* Timeline connector line + node styling shared by the "Ons verhaal" section */
+.timeline-line {
+  background: linear-gradient(to bottom, var(--color-prutsers-orange), var(--color-prutsers-accent-dark));
+}
+
+.timeline-node {
+  box-shadow: 0 0 0 4px var(--color-prutsers-cream), 0 0 0 5px rgba(23, 18, 14, 0.08);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 46s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

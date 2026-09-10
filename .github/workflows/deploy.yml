@@ -1,0 +1,38 @@
+name: Build en deploy naar FTP
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: Node.js instellen
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Dependencies installeren
+        run: npm ci
+
+      - name: Site bouwen (statische export)
+        run: npm run build
+
+      - name: Uploaden naar FTP-server
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./out/
+          # Voorkom dat oude/onbekende bestanden op de server per ongeluk verwijderd worden
+          # bij de allereerste run. Zet dit gerust aan zodra je zeker weet dat de FTP_SERVER_DIR
+          # map alleen door deze site gebruikt wordt.
+          dangerous-clean-slate: false

@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JAV Luyksgestel De Prutsers — website
 
-## Getting Started
+Statische Next.js-website voor carnavalsvereniging JAV Luyksgestel De Prutsers.
 
-First, run the development server:
+## Ontwikkelen
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Statische build genereren
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+De uitvoer komt in de map `out/` (via `output: "export"` in `next.config.ts`) en kan direct op elke statische
+hosting (bv. Vercel, Netlify, GitHub Pages, of een gewone webserver) geplaatst worden.
 
-## Learn More
+## Pagina's
 
-To learn more about Next.js, take a look at the following resources:
+- `/` — Home met fullscreen achtergrondslider en "Wie zijn wij"
+- `/sponsoren` — Overzicht van alle sponsoren
+- `/media` — Facebook-integratie
+- `/club-van-11` — Informatie over de Club van 11
+- `/lid-worden` — Aanmeldformulier voor nieuwe leden
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Op elke pagina staat onderaan een doorlopende sponsorslider (`src/components/SponsorSlider.tsx`).
+Sponsorgegevens staan in `src/lib/sponsors.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Facebook op de Media-pagina
 
-## Deploy on Vercel
+Gebruikt de gratis Facebook Page Plugin (iframe, geen API-key nodig, werkt direct). Pas de paginanaam aan in
+`src/components/FacebookFeed.tsx` (`FACEBOOK_PAGE_URL`) als de exacte Facebook-URL afwijkt.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployen
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Zie **[DEPLOY.md](DEPLOY.md)** voor het automatisch bouwen en uploaden naar de FTP-server via
+GitHub Actions bij elke push naar `main`.
+
+## Afbeeldingen
+
+- `public/images/backgrounds/` — achtergronden voor de homepage-slider
+- `public/images/sponsors/` — sponsorlogo's
+- `public/images/logo.jpg`, `public/images/logo-transparent-white.png`, `public/images/logo-transparent-black.png` — verenigingslogo (jpg met witte achtergrond, en twee transparante varianten voor donkere/lichte ondergrond)
