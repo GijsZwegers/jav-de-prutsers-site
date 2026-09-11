@@ -78,6 +78,17 @@ export default function Footer() {
           </span>
           <span className="hidden sm:inline">&middot;</span>
           <span>
+            <a
+              href="/documents/privacyverklaring.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white/80 hover:text-prutsers-orange-light"
+            >
+              Privacyverklaring
+            </a>
+          </span>
+          <span className="hidden sm:inline">&middot;</span>
+          <span>
             Mede mogelijk gemaakt door{" "}
             <a
               href="https://www.zwegersit.nl"
