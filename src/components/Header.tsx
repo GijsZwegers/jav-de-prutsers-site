@@ -61,7 +61,7 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src={solid ? "/images/logo-transparent-black.png" : "/images/logo-transparent-white.png"}
+            src={solid ? "/images/logo-transparent-green.png" : "/images/logo-transparent-white.png"}
             alt="JAV Luyksgestel De Prutsers"
             width={44}
             height={62}
