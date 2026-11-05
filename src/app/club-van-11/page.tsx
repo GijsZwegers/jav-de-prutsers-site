@@ -56,7 +56,7 @@ export default function ClubVan11Page() {
               Online inschrijfformulier
             </a>
             <a
-              href="/documents/informatieformulier-club-van-11.pdf"
+              href="/documents/informatieformulier-club-van-11.pdf?v=2"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-prutsers-dark/15 bg-white px-6 py-3 text-sm font-semibold text-prutsers-dark transition hover:-translate-y-0.5 hover:border-prutsers-accent-dark/40 hover:text-prutsers-accent-dark hover:shadow-brand-sm"
