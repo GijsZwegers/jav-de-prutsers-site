@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 
+const formUrl =
+  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=jMOZr_-fF0KMXVIFjgU_N59M3lrGmn5Ljilk9t_Q7itUNkIxRVVVS0RFODNKQjExUlhGVzVSRkcwSSQlQCN0PWcu";
+
 export const metadata: Metadata = {
   title: "Club van 11 | JAV Luyksgestel De Prutsers",
   description:
@@ -33,7 +36,7 @@ export default function ClubVan11Page() {
             bekostigen.
           </p>
           <p>
-            Wilt u meer informatie over de Club van 11? Bekijk dan het informatieformulier hieronder. Of mail naar{" "}
+            Heeft u vragen over de Club van 11? Mail naar{" "}
             <a href="mailto:clubvan11@javluyksgestel.nl" className="font-semibold text-prutsers-accent-dark underline decoration-prutsers-accent-dark/40 underline-offset-2">
               clubvan11@javluyksgestel.nl
             </a>
@@ -45,26 +48,27 @@ export default function ClubVan11Page() {
           <p className="font-semibold text-prutsers-dark">
             Alvast hartelijk dank! En welkom bij de Club van 11 van JAV Luyksgestel De Prutsers.
           </p>
-
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a
-              href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=jMOZr_-fF0KMXVIFjgU_N59M3lrGmn5Ljilk9t_Q7itUNkIxRVVVS0RFODNKQjExUlhGVzVSRkcwSSQlQCN0PWcu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shadow-brand-sm rounded-xl bg-prutsers-orange px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-prutsers-orange-dark hover:shadow-brand"
-            >
-              Online inschrijfformulier
-            </a>
-            <a
-              href="/documents/informatieformulier-club-van-11.pdf?v=2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-prutsers-dark/15 bg-white px-6 py-3 text-sm font-semibold text-prutsers-dark transition hover:-translate-y-0.5 hover:border-prutsers-accent-dark/40 hover:text-prutsers-accent-dark hover:shadow-brand-sm"
-            >
-              Informatieformulier bekijken (PDF)
-            </a>
-          </div>
         </Reveal>
+
+        <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-3xl bg-white shadow-sm">
+          <iframe
+            title="Aanmeldformulier Club van 11"
+            src={`${formUrl}&embed=true`}
+            height="800"
+            className="block max-h-[85svh] w-full border-0"
+            allowFullScreen
+          />
+          <p className="px-5 py-4 text-sm">
+            <a
+              href={formUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-prutsers-accent-dark underline underline-offset-2"
+            >
+              Aanmeldformulier openen in een nieuw tabblad
+            </a>
+          </p>
+        </div>
       </section>
     </>
   );
