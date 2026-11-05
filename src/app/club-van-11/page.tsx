@@ -42,33 +42,18 @@ export default function ClubVan11Page() {
             </a>
             .
           </p>
-          <p>
-            Wilt u lid worden van de Club van 11? Meld u dan aan via het online inschrijfformulier hieronder.
-          </p>
           <p className="font-semibold text-prutsers-dark">
             Alvast hartelijk dank! En welkom bij de Club van 11 van JAV Luyksgestel De Prutsers.
           </p>
+          <a
+            href={formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shadow-brand-sm inline-block rounded-xl bg-prutsers-orange px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-prutsers-orange-dark hover:shadow-brand"
+          >
+            Aanmelden voor de Club van 11
+          </a>
         </Reveal>
-
-        <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-3xl bg-white shadow-sm">
-          <iframe
-            title="Aanmeldformulier Club van 11"
-            src={`${formUrl}&embed=true`}
-            height="800"
-            className="block max-h-[85svh] w-full border-0"
-            allowFullScreen
-          />
-          <p className="px-5 py-4 text-sm">
-            <a
-              href={formUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-prutsers-accent-dark underline underline-offset-2"
-            >
-              Aanmeldformulier openen in een nieuw tabblad
-            </a>
-          </p>
-        </div>
       </section>
     </>
   );
