@@ -49,7 +49,7 @@ export default function ClubVan11Page() {
 
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAa__YW8wz5UQjVCTk5IUkVHV0syNEE4WjFMSzkxV1NYWi4u"
+              href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=jMOZr_-fF0KMXVIFjgU_N59M3lrGmn5Ljilk9t_Q7itUNkIxRVVVS0RFODNKQjExUlhGVzVSRkcwSSQlQCN0PWcu"
               target="_blank"
               rel="noopener noreferrer"
               className="shadow-brand-sm rounded-xl bg-prutsers-orange px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-prutsers-orange-dark hover:shadow-brand"
