@@ -24,6 +24,16 @@ jobs:
       - name: Site bouwen (statische export)
         run: npm run build
 
+      - name: Clubpagina bereikbaar maken via de bestaande websiteadressen
+        run: |
+          cp out/club-van-11.html out/club-van-11/index.html
+          # Eerder gepubliceerde homepages laden de clubpagina via dit oudere pad.
+          segment=out/club-van-11/__next.club-van-11
+          if [ -f "$segment.__PAGE__.txt" ]; then
+            mkdir -p "$segment"
+            cp "$segment.__PAGE__.txt" "$segment/__PAGE__.txt"
+          fi
+
       - name: Uploaden naar FTP-server
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
