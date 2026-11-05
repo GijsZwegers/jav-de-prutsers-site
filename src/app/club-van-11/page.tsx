@@ -40,8 +40,7 @@ export default function ClubVan11Page() {
             .
           </p>
           <p>
-            Wilt u lid worden van de Club van 11? Download dan het inschrijfformulier of meld u aan via de knop
-            hieronder.
+            Wilt u lid worden van de Club van 11? Meld u dan aan via het online inschrijfformulier hieronder.
           </p>
           <p className="font-semibold text-prutsers-dark">
             Alvast hartelijk dank! En welkom bij de Club van 11 van JAV Luyksgestel De Prutsers.
@@ -57,12 +56,12 @@ export default function ClubVan11Page() {
               Online inschrijfformulier
             </a>
             <a
-              href="https://javluyksgestel.nl/wp-content/uploads/2020/10/Informatieformulier-club-van-11-V2-3.docx"
+              href="/documents/informatieformulier-club-van-11.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-prutsers-dark/15 bg-white px-6 py-3 text-sm font-semibold text-prutsers-dark transition hover:-translate-y-0.5 hover:border-prutsers-accent-dark/40 hover:text-prutsers-accent-dark hover:shadow-brand-sm"
             >
-              Informatieformulier downloaden
+              Informatieformulier bekijken (PDF)
             </a>
           </div>
         </Reveal>
